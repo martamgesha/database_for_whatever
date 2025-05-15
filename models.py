@@ -1,7 +1,7 @@
 from mongoengine import Document, StringField, EmailField, ReferenceField, ListField, connect, ObjectIdField
 import datetime
 
-class User(Document):
+class Users(Document):
     user_id = ObjectIdField(primary_key=True, default=ObjectId)
     username = StringField(required=True, unique=True, max_length=50)
     password = StringField(required=True)
@@ -26,7 +26,7 @@ class User(Document):
     def __str__(self):
         return self.username
 
-class Process(Document):
+class Processes(Document):
     process_id = ObjectIdField(primary_key=True, default=ObjectId)
     user_id = ReferenceField(User, required=True)
     image = StringField(required=True)
