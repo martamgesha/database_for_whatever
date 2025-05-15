@@ -2,7 +2,7 @@ from mongoengine import Document, StringField, EmailField, ReferenceField, ListF
 import datetime
 
 class User(Document):
-    user_id = ObjectIdField(primary_key=True, default=ObjectId
+    user_id = ObjectIdField(primary_key=True, default=ObjectId)
     username = StringField(required=True, unique=True, max_length=50)
     password = StringField(required=True)
     email = EmailField(required=True, unique=True)
@@ -28,7 +28,7 @@ class User(Document):
 
 class Process(Document):
     process_id = ObjectIdField(primary_key=True, default=ObjectId)
-    user = ReferenceField(User, required=True)
+    user_id = ReferenceField(User, required=True)
     image = StringField(required=True)
     model = StringField(required=True)
     classify = StringField(required=True)
