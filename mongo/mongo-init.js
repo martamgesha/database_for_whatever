@@ -18,4 +18,4 @@ db.users.insertOne({
 
 db.createCollection('processes');
 
-db.processes.createIndex({ "user_id": 10000001 });
+db.processes.createIndex({ "user_id": 1 });
